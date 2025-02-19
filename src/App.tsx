@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { SendHorizontal, Bot, User } from 'lucide-react';
-import { getBotAnswer } from './mockBotLogic';
+import { getBotAnswer } from './exercise1-solution';
 import { Message } from './types';
+import ReactMarkdown from 'react-markdown';
 
 function App() {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -18,12 +19,12 @@ function App() {
       role: 'user',
     };
 
+    setIsLoading(true);
+    setMessages(prev => [...prev, userMessage]);
+    setInput('');
 
     try {
-      setIsLoading(true);
       const botResponse = await getBotAnswer(messages, input);
-      setMessages(prev => [...prev, userMessage]);
-      setInput('');
       
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
@@ -77,7 +78,11 @@ function App() {
                   ) : (
                     <User className="w-6 h-6 flex-shrink-0" />
                   )}
-                  <p className="whitespace-pre-wrap">{message.content}</p>
+                  {message.role === 'assistant' ? (
+                    <ReactMarkdown className="whitespace-pre-wrap">{message.content}</ReactMarkdown>
+                  ) : (
+                    <p className="whitespace-pre-wrap">{message.content}</p>
+                  )}
                 </div>
               </div>
             ))}
