@@ -26,6 +26,10 @@ This project contains a series of exercises to help you learn how to create AI a
 
 ## Exercises
 
+To iterate through the exercises, you can go to [App.tsx](src/App.tsx) and change the source of the function `getBotAnswer`. It is starting at `exercise0`. You can also see the implementation of each exercise's solution in the `src/exercises/solutions` folder.
+
+```tsx
+
 ### Exercise 0: Checking the Install
 
 Ensure that your environment is set up correctly by running the following command:
