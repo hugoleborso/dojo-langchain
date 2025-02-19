@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SendHorizontal, Bot, User } from 'lucide-react';
-import { getBotAnswer } from './exercise1-solution';
+import { getBotAnswer } from './exercices/exercise0';
 import { Message } from './types';
 import ReactMarkdown from 'react-markdown';
 

@@ -1,4 +1,4 @@
-import { Message } from "./types";
+import { Message } from "../types";
 
 export async function getBotAnswer(
   _previousMessages: Message[],
