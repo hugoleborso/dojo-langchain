@@ -20,13 +20,14 @@ const llm = new ChatOpenAI({
 
 export async function getBotAnswer(
   _previousMessages: Message[],
-  newUserMessage: Message
+  newUserMessage: string
 ): Promise<string> {
   console.log({ newUserMessage, systemMessage, llm });
 
   // const appWithSystemMessage = createReactAgent({
   //   llm: undefined,
-  //   tools: undefined
+  //   tools: [],
+  //   prompt: undefined,
   // });
 
   // const agentOutput = await appWithSystemMessage.invoke({
